@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vehicle Price Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Predict Vehicle Price</h1>
+        <form action="/predict" method="post">
+            <label>Year:</label>
+            <input type="number" name="year" required><br>
+
+            <label>Mileage:</label>
+            <input type="number" name="mileage" required><br>
+
+            <label>Brand:</label>
+            <input type="text" name="brand" required><br>
+
+            <label>Fuel Type:</label>
+            <input type="text" name="fuel_type" required><br>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction %}
+            <h2>Predicted Price: {{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
