@@ -6,7 +6,7 @@ A simple machine learning project that predicts the price of used cars based on 
 
 ## **Project Overview**
 
-This project demonstrates:
+This project demonstrates....
 
 - **ML Pipeline**: Data ingestion → Preprocessing → Model Training → Evaluation  
 - **FastAPI App**: Provides an API and interface to input car details and get predicted prices.  
