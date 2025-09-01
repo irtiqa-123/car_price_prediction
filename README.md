@@ -121,6 +121,62 @@ FastAPI
 scikit-learn, pandas, numpy
 
 Docker & Docker Hub
+CI/CD for Car Price Prediction App
+Overview
+
+This project uses GitHub Actions to implement Continuous Integration (CI) and Continuous Deployment (CD) for the car-price-app Docker container. Every change pushed to the main branch triggers the workflow to automatically build and push the Docker image to DockerHub.
+
+Workflow Steps
+
+Trigger
+
+The workflow runs automatically on push to the main branch.
+
+Can also be manually triggered from the Actions tab.
+
+Checkout Code
+
+The workflow first checks out the latest code from the repository using actions/checkout@v3.
+
+Setup Python & Install Dependencies
+
+Uses actions/setup-python to install Python.
+
+Installs required packages from requirements.txt.
+
+Docker Login
+
+Logs into DockerHub using GitHub Secrets:
+
+DOCKERHUB_USERNAME → your DockerHub username
+
+DOCKERHUB_TOKEN → DockerHub Access Token
+
+This ensures secure login for pushing images.
+
+Build Docker Image
+
+Builds the Docker image using your Dockerfile.
+
+Tags the image: mirirtiqa/car-price-app:latest.
+
+Push Docker Image to DockerHub
+
+Pushes the newly built image to DockerHub automatically.
+
+Secrets Required
+Secret Name	Description
+DOCKERHUB_USERNAME	DockerHub username (mirirtiqa)
+DOCKERHUB_TOKEN	DockerHub Access Token
+How It Works
+
+Make changes in the repo and push to main.
+
+GitHub Actions runs the workflow: builds & pushes Docker image.
+
+EC2 or any server can pull the latest image from DockerHub to deploy.
+
+This ensures automation — you don’t need to manually rebuild or push Docker images every time you update the code.
 
 Future Improvements
 Add a polished frontend using HTML/CSS or Streamlit
