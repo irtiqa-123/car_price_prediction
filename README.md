@@ -184,6 +184,29 @@ Add a polished frontend using HTML/CSS or Streamlit
 Integrate CI/CD pipeline for automated builds and deployment
 
 Deploy on cloud (Render, Railway, AWS ECS/Fargate) for public access
+🌐 Deployment (Render)
+
+Render pulls the Docker image from Docker Hub
+
+Deploys and serves at:
+👉 https://car-price-prediction-1-7yov.onrender.com
+
+✨ Example Prediction
+
+Input:
+
+Brand: Maruti
+
+Year: 2015
+
+Fuel: Petrol
+
+Mileage: 30,000
+
+Output:
+
+Predicted Price: ₹ 2878
+
 
 License
 MIT License
