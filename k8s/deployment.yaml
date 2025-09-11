@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: car-app-deployment
+spec:
+  replicas: 2   # Run 2 copies of your app
+  selector:
+    matchLabels:
+      app: car-app
+  template:
+    metadata:
+      labels:
+        app: car-app
+    spec:
+      containers:
+        - name: car-app-container
+          image: mirirtiqa/car_price_prediction:latest
+          ports:
+            - containerPort: 8000
