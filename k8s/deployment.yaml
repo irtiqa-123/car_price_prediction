@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: car-app-deployment
 spec:
-  replicas: 2   # Run 2 copies of your app
+  replicas: 1
   selector:
     matchLabels:
       app: car-app
@@ -13,7 +13,9 @@ spec:
         app: car-app
     spec:
       containers:
-        - name: car-app-container
-          image: mirirtiqa/car_price_prediction:latest
+        - name: car-app
+          image: kubernetes-test-app:latest
           ports:
             - containerPort: 8000
+
+

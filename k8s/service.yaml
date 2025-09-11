@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: car-app-service
 spec:
-  type: LoadBalancer   # Makes it accessible outside
   selector:
     app: car-app
   ports:
     - protocol: TCP
-      port: 80        # Public port
-      targetPort: 8000 # Your app's port
+      port: 80
+      targetPort: 8000
+  type: NodePort
